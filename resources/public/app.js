@@ -21685,4 +21685,4 @@ cljs.core.special_symbol_QMARK_ = function special_symbol_QMARK_(x) {
 };
 goog.provide("r0_rich.app");
 goog.require("cljs.core");
-document.write("<h1>richever</h1>");
+console.log("<h1>richever</h1>");

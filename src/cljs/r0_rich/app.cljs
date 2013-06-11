@@ -1,2 +1,2 @@
 (ns r0_rich.app)
-(.write js/document "<h1>richever</h1>")
+(.log js/console "<h1>richever</h1>")

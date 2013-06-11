@@ -3,8 +3,14 @@
         hiccup.core
         hiccup.page
         ring.adapter.jetty)
-  (:require [compojure.handler :as handler]
+  (:require [gaka [core :as gaka]]
+            [compojure.handler :as handler]
             [compojure.route :as route]))
+
+(def in-css (gaka/css [:div.navigation_bar 
+                           :background-color "black"
+                           :color "white"
+                           :padding "5px 5px 0px 50px"]))
 
 (defn index-page []
   "index page for richever"
@@ -12,10 +18,12 @@
    [:head 
     [:title "Richever Technology Ltd. Regina Saskatchewan"]
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
-    (include-css "/css/style.css")
+    (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
+    [:style in-css]
     (include-js "/vendor/bootstrap/js/bootstrap.min.js")
     (include-js "/app.js")]
    [:body
+    [:div.row-fluid.navigation_bar "this is navigation bar"]
     [:h1 [:a {:href "http://www.richever.ca"} "richever"]]]))
 
 (defroutes app-routes

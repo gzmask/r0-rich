@@ -7,6 +7,7 @@
             [lein-ring "0.8.5"]]
   :dependencies [[ring/ring-core "1.1.8"]
                  [ring/ring-jetty-adapter "1.1.8"]
+                 [gaka "0.3.0"]
                  [hiccup "1.0.3"]
                  [compojure "1.1.5"]
                  [org.clojure/clojure "1.5.1"]]
