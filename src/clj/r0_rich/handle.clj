@@ -26,5 +26,5 @@
 (def app
   (handler/site app-routes))
 
-(def -main
+(defn -main []
     (run-jetty #'app {:port 3000 :join? false}))
