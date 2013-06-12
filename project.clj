@@ -12,7 +12,8 @@
                  [compojure "1.1.5"]
                  [org.clojure/clojure "1.5.1"]]
   :source-paths ["src/clj"]
-  :ring {:handler r0_rich.handle/app}
+  :ring {:handler r0_rich.handle/app
+         :auto-relod? true}
   :main r0_rich.handle
   :profiles {:dev {:dependencies [[ring-server "0.2.8"]
                                   [ring-mock "0.1.3"]]}}

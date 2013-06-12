@@ -10,7 +10,9 @@
 (def in-css (gaka/css [:div.navigation_bar 
                            :background-color "black"
                            :color "white"
-                           :padding "5px 5px 0px 50px"]))
+                           :padding "5px 5px 0px 50px"]
+                      [:body
+                           :background-color "#444"]))
 
 (defn index-page []
   "index page for richever"
@@ -19,12 +21,13 @@
     [:title "Richever Technology Ltd. Regina Saskatchewan"]
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
     (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
+    (include-css "/vendor/font-awesome/css/font-awesome.min.css")
     [:style in-css]
     (include-js "/vendor/bootstrap/js/bootstrap.min.js")
     (include-js "/app.js")]
    [:body
     [:div.row-fluid.navigation_bar "this is navigation bar"]
-    [:h1 [:a {:href "http://www.richever.ca"} "richever"]]]))
+    ]))
 
 (defroutes app-routes
   (GET "/" [] (index-page))

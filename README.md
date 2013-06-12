@@ -1,12 +1,22 @@
 # r0-rich
 
-## Usage
+## Development
 
 lein deps
 
 lein cljsbuild once
 
 lein run / lein ring server
+
+## Production
+
+lein ring server-headless 80
+
+## Compile and deploy
+
+lein ring uberjar
+
+java -jar target/<filename>-standalone.jar
 
 ## License
 
