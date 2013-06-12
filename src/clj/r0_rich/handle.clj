@@ -7,12 +7,16 @@
             [compojure.handler :as handler]
             [compojure.route :as route]))
 
-(def in-css (gaka/css [:div.navigation_bar 
-                           :background-color "black"
-                           :color "white"
-                           :padding "5px 5px 0px 50px"]
-                      [:body
-                           :background-color "#444"]))
+(def css
+  (gaka/css [:div.navigation_bar 
+             :background-color "#ccc"
+             :color "#fff" 
+             :height "25px"
+             :padding "5px 5px 0px 50px"]
+            [:body
+             :background-color "#444"]
+            [:i.icon-camera-retro
+             :color "#000"]))
 
 (defn index-page []
   "index page for richever"
@@ -22,11 +26,11 @@
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
     (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
     (include-css "/vendor/font-awesome/css/font-awesome.min.css")
-    [:style in-css]
+    [:style css]
     (include-js "/vendor/bootstrap/js/bootstrap.min.js")
     (include-js "/app.js")]
    [:body
-    [:div.row-fluid.navigation_bar "this is navigation bar"]
+    [:div.row-fluid.navigation_bar [:i.icon-camera-retro] "&nbsp; this is navigation bar"]
     ]))
 
 (defroutes app-routes
