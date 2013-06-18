@@ -35,11 +35,26 @@
           i.icon-camera-retro {
             color: #000;} "})
 
+(defn def_page [title body]
+  (list [:h2.offset1 title] [:div.row-fluid [:div.offset2.span2 body]]))
+
+(defn def_nav [navs icons]
+  (map (fn [nav icon]
+         (list [:div.span2 [:a [(keyword (str "i." icon)) nav]]]))
+       navs icons))
+
+(def home_pg (def_page "Home" "This is Home"))
+(def start_pg (def_page "Getting Start" "This is Getting Start"))
+(def port_pg (def_page "Portfolio" "This is Portfolio"))
+(def about_pg (def_page "About" "This is About"))
+(def nav_bar (def_nav ["Home" "Getting Start" "Portfolio" "About"] 
+                      ["icon-home" "icon-fighter-jet" "icon-folder-open" "icon-lightbulb"]))
+
 (defn index-page []
   "index page for richever"
   (html5
    [:head 
-    [:title "Richever Technology Ltd. Regina Saskatchewan"]
+    [:title "ctl testing page"]
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
     (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
     (include-css "/vendor/font-awesome/css/font-awesome.min.css")
@@ -47,20 +62,12 @@
     (include-js "/vendor/bootstrap/js/bootstrap.min.js")
     (include-js "/app.js")]
    [:body
-    [:div.row-fluid.navigation_bar [:div.span2 [:a [:i.icon-home] "Home"]]
-                                   [:div.span2 [:a [:i.icon-fighter-jet] "Getting Start"]]
-                                   [:div.span2 [:a [:i.icon-folder-open] "Portfolio"]]
-                                   [:div.span2 [:a [:i.icon-lightbulb] "About"]]]
+    [:div.row-fluid.navigation_bar nav_bar]
     [:div.row-fluid.content [:h1 "Simple stuff"]
-                            [:div.row-fluid.home [:h2.offset1 "Home"]
-                                                 [:div.row-fluid [:div.offset2.span2 "this is home"]]]
-                            [:div.row-fluid.start [:h2.offset1 "Getting Start"]
-                                                 [:div.row-fluid [:div.offset2.span2 "this is start"]]]
-                            [:div.row-fluid.port [:h2.offset1 "Portfolio"]
-                                                 [:div.row-fluid [:div.offset2.span2 "this is port"]]]
-                            [:div.row-fluid.about [:h2.offset1 "About"]
-                                                 [:div.row-fluid [:div.offset2.span2 "this is about"]]]]
-    ]))
+                            [:div.row-fluid.home home_pg]
+                            [:div.row-fluid.start  start_pg]
+                            [:div.row-fluid.port  port_pg]
+                            [:div.row-fluid.about  about_pg]]]))
 
 (defroutes app-routes
   (GET "/" [] (index-page))
@@ -73,3 +80,10 @@
 
 (defn -main []
     (run-jetty #'app {:port 3000 :join? false}))
+
+(comment
+  "repl"
+  (defonce server (run-jetty #'app {:port 3000 :join? false}))
+  (.start server)
+  (.stop server)
+)
