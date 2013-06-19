@@ -8,6 +8,7 @@
   :dependencies [[ring/ring-core "1.1.8"]
                  [ring/ring-jetty-adapter "1.1.8"]
                  [hiccup "1.0.3"]
+                 [prismatic/dommy "0.1.1"]
                  [compojure "1.1.5"]
                  [org.clojure/clojure "1.5.1"]]
   :source-paths ["src/clj"]

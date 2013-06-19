@@ -4,7 +4,7 @@
 
 lein deps
 
-lein cljsbuild once
+lein cljsbuild auto (or once)
 
 lein run / lein ring server
 

@@ -4,6 +4,7 @@
         hiccup.page
         ring.adapter.jetty)
   (:require [compojure.handler :as handler]
+            [clojure.string :as s]
             [compojure.route :as route]))
 
 (defn css [] 
@@ -36,7 +37,9 @@
             color: #000;} "})
 
 (defn def_page [title body]
-  (list [:h2.offset1 title] [:div.row-fluid [:div.offset2.span2 body]]))
+  (list [:h2.offset1 title] 
+        [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"\s" "")))} 
+        [:div.offset2.span2 body]]))
 
 (defn def_nav [navs icons]
   (map (fn [nav icon]
@@ -47,7 +50,7 @@
 (def start_pg (def_page "Getting Start" "This is Getting Start"))
 (def port_pg (def_page "Portfolio" "This is Portfolio"))
 (def about_pg (def_page "About" "This is About"))
-(def nav_bar (def_nav ["Home" "Getting Start" "Portfolio" "About"] 
+(def nav_bar (def_nav ["Home" "Getting_Start" "Portfolio" "About"] 
                       ["icon-home" "icon-fighter-jet" "icon-folder-open" "icon-lightbulb"]))
 
 (defn index-page []
