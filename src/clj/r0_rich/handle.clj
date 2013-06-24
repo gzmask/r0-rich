@@ -11,17 +11,23 @@
   {:headers {"Content-Type" "text/css"}
    :body "body {
             background-color: #000;
+            background-image: url('/img/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: 10px 50px;
+            background-size: 1280px 800px;
             color: #E0771B;
             font-family: advent-Bd1;}
+          .trans_bg {
+            padding: 10px;
+            background-color: rgba(0,0,0,0.8);
+          }
           div.content {
-            font-size: 20px;
-            padding: 15px 15px 50px 50px;}
+            font-size: 20px;}
           div.navigation_bar {
             background-color: #ccc;
             font-family: advent-Re;
             font-size: 20px;
-            color: #fff;
-            padding: 5px 5px 2px 50px;}
+            color: #fff;}
           @font-face {
             font-family: advent-Re;
             src: url('fonts/advent-Re.otf');}
@@ -36,23 +42,38 @@
 
 (defn def_page [title body]
   "compose page, convert title as id"
-  (list [:h2 title] 
+  (list [:h2.offset1 title] 
         [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))} 
-        [:div.offset1.span10 body]]))
+          [:div.span10.offset1 body]]))
 
 (defn def_nav [navs icons]
-  (map (fn [nav icon]
-         (list [:div.span2 [:a {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
-       navs icons))
+  (list [:div.span1 ""] 
+        (map (fn [nav icon] 
+               (list [:div.span2 [:a {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
+             navs icons)))
 
 (def home_pg (def_page "Home" 
                (list 
                  [:div.row-fluid
-                 [:div.span2 {:style "color:#E5533C;"} "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur dolor at posuere vehicula. Ut nec pretium felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin a pellentesque magna, sit amet congue nulla. Pellentesque quis egestas eros. Integer eget laoreet urna. Maecenas eu aliquam urna. Sed sit amet ullamcorper quam."]
-                 [:div.span2 {:style "color:#F5E346;"} "Vestibulum dictum quam in vulputate gravida. Sed id purus quis erat commodo eleifend. Etiam blandit diam elit, in laoreet mauris ullamcorper eget. Quisque ac enim rhoncus, convallis eros sollicitudin, egestas ipsum. Praesent ultricies, lorem id tristique dictum, nisi nulla cursus augue, ut tincidunt lorem massa id felis. Sed sit amet tellus dui. Curabitur vulputate molestie odio. Etiam hendrerit leo eget tincidunt tempus. Pellentesque a turpis id est vestibulum blandit ut et leo. Fusce rhoncus auctor turpis vitae ullamcorper. Mauris varius lectus ac orci facilisis faucibus."]
-                 [:div.span2 {:style "color:#93D06D;"} "Pellentesque nisi neque, aliquam quis imperdiet id, sagittis nec diam. Phasellus vestibulum id mi in volutpat. Donec ut facilisis sem. Morbi sed mi iaculis, rutrum neque quis, lobortis quam. Vestibulum rhoncus ut neque quis dictum. Curabitur quam dolor, pellentesque ac lacinia non, imperdiet nec tortor. Cras sit amet vehicula diam, ut fermentum ante. Nullam varius tristique turpis et mollis. Vivamus congue et sem sit amet luctus."]
-                 [:div.span2 {:style "color:#50AC6A;"} "Aliquam blandit aliquet hendrerit. Integer placerat diam quis sapien tincidunt, quis tempus risus lacinia. Nunc nec ligula mauris. Nunc imperdiet vehicula condimentum. Vestibulum volutpat gravida eros, vitae ullamcorper nulla congue id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut rhoncus congue quam quis congue. Maecenas eget lacinia erat."]
-                 [:div.span2 {:style "color:#227864;"} "Aenean quis eleifend eros, id gravida diam. Proin pellentesque mattis quam, et eleifend augue rhoncus sed. Ut nec egestas massa. Vivamus quis malesuada tellus, et ornare nulla. Curabitur dictum purus lorem, non vehicula purus condimentum nec. Proin ullamcorper, justo eget vulputate malesuada, elit ipsum semper neque, in semper nisl arcu vel nulla. Vestibulum nec ipsum convallis, porta tortor eu, lacinia enim. Aenean euismod aliquam consectetur. Nulla libero mi, porta et quam euismod, auctor aliquet nulla. In turpis quam, suscipit vel auctor at, fermentum at lectus. Vivamus laoreet nulla ut ultricies viverra. Vestibulum ac consectetur felis. Donec venenatis in est id lobortis. Maecenas egestas imperdiet justo non rhoncus. Nullam mi leo, dignissim a mauris et, semper ornare ligula. Nulla tristique, elit in pharetra mattis, lacus lacus vehicula erat, elementum gravida elit magna ac augue."]])))
+                 [:div.span3.trans_bg {:style "color:#E5533C;"} 
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur dolor at posuere vehicula. Ut nec pretium felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin a pellentesque magna, sit amet congue nulla. Pellentesque quis egestas eros. Integer eget laoreet urna. Maecenas eu aliquam urna. Sed sit amet ullamcorper quam."]
+                 [:div.span3.trans_bg {:style "color:#F5E346;"} 
+                  
+                  "Vestibulum dictum quam in vulputate gravida. Sed id purus quis erat commodo eleifend. Etiam blandit diam elit, in laoreet mauris ullamcorper eget. Quisque ac enim rhoncus, convallis eros sollicitudin, egestas ipsum. Praesent ultricies, lorem id tristique dictum, nisi nulla cursus augue, ut tincidunt lorem massa id felis. Sed sit amet tellus dui. Curabitur vulputate molestie odio. Etiam hendrerit leo eget tincidunt tempus. Pellentesque a turpis id est vestibulum blandit ut et leo. Fusce rhoncus auctor turpis vitae ullamcorper. Mauris varius lectus ac orci facilisis faucibus."
+                  [:br] [:br]
+                  [:img {:src "/img/img2.jpg"}]]
+                 [:div.span2.trans_bg {:style "color:#93D06D;"} 
+                  [:img {:src "/img/img1.jpg"}]
+                  [:br] [:br]
+                  "Pellentesque nisi neque, aliquam quis imperdiet id, sagittis nec diam. Phasellus vestibulum id mi in volutpat. Donec ut facilisis sem. Morbi sed mi iaculis, rutrum neque quis, lobortis quam. Vestibulum rhoncus ut neque quis dictum. Curabitur quam dolor, pellentesque ac lacinia non, imperdiet nec tortor. Cras sit amet vehicula diam, ut fermentum ante. Nullam varius tristique turpis et mollis. Vivamus congue et sem sit amet luctus."]
+                 [:div.span2.trans_bg {:style "color:#50AC6A;"} 
+                  [:img {:src "/img/img4.jpg"}]
+                  [:br] [:br]
+                  "Aliquam blandit aliquet hendrerit. Integer placerat diam quis sapien tincidunt, quis tempus risus lacinia. Nunc nec ligula mauris. Nunc imperdiet vehicula condimentum. Vestibulum volutpat gravida eros, vitae ullamcorper nulla congue id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut rhoncus congue quam quis congue. Maecenas eget lacinia erat."]
+                 [:div.span2.trans_bg {:style "color:#227864;"} 
+                  [:img {:src "/img/img5.jpg"}]
+                  [:br] [:br]
+                  "Aenean quis eleifend eros, id gravida diam. Proin pellentesque mattis quam, et eleifend augue rhoncus sed. Ut nec egestas massa. Vivamus quis malesuada tellus, et ornare nulla. Curabitur dictum purus lorem, non vehicula purus condimentum nec. Proin ullamcorper, justo eget vulputate malesuada, elit ipsum semper neque, in semper nisl arcu vel nulla. Vestibulum nec ipsum convallis, porta tortor eu, lacinia enim."]])))
 (def start_pg (def_page "Getting Start" 
                 "This is Getting Start"))
 (def port_pg (def_page "Portfolio" 
@@ -75,7 +96,7 @@
     (include-css "/style.css")]
    [:body
     [:div.row-fluid.navigation_bar nav_bar]
-    [:div.row-fluid.content [:h1 "Simple stuff"]
+    [:div.row-fluid.content [:h1.offset1 "Simple stuff"]
     (cond
       (= page "home") [:div.row-fluid.home home_pg]
       (= page "gettingstart") [:div.row-fluid.start  start_pg]
