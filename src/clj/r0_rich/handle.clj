@@ -10,24 +10,27 @@
 (defn css [] 
   {:headers {"Content-Type" "text/css"}
    :body "body {
-            background-color: #000;
-            background-image: url('/img/bg.jpg');
+            background-color: #1A1E24;
             background-repeat: no-repeat;
             background-position: 10px 50px;
             background-size: 1280px 800px;
-            color: #E0771B;
+            color: #FFFFFF;
             font-family: advent-Bd1;}
-          .trans_bg {
-            padding: 10px;
-            background-color: rgba(0,0,0,0.8);
-          }
           div.content {
             font-size: 20px;}
+          div.top_bar {
+            height: 4px;
+            width: 16%;
+            float: left;}
           div.navigation_bar {
-            background-color: #ccc;
-            font-family: advent-Re;
-            font-size: 20px;
-            color: #fff;}
+            padding: 50px 0px 20px 0px;
+            font-size: 25px;
+            color: #fff;
+            transition: background-color,height 500ms;}
+          div.navigation_bar:hover {
+            background-color: #000;
+            height: 200px;
+          }
           @font-face {
             font-family: advent-Re;
             src: url('fonts/advent-Re.otf');}
@@ -37,12 +40,26 @@
           @font-face {
             font-family: advent-Bd1;
             src: url('fonts/advent-Bd1.otf');}
-          i.icon-camera-retro {
-            color: #000;} "})
+          hr {
+            border: 0;
+            height: 1px;
+            background: #555;
+            background: -webkit-gradient(linear, 0 0, 100% 0, from(#1A1E24), to(#1A1E24), color-stop(50%, #555));}
+          a:link {
+            color:#6C7381;
+            font-family: advent-Re;
+            transition: color 500ms;}
+          a:visited {color:#6C7381;font-family: advent-Re; }
+          a:hover {color:#F5F5F5;font-family: advent-Re; }
+          a:active {color:#6C7381;font-family: advent-Re; }
+          "})
 
 (defn def_page [title body]
   "compose page, convert title as id"
-  (list [:h2.offset1 title] 
+  (list  
+    [:hr]
+    [:h2.offset3 title]
+    [:hr]
         [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))} 
           [:div.span10.offset1 body]]))
 
@@ -95,15 +112,20 @@
     (include-css "/vendor/font-awesome/css/font-awesome.min.css")
     (include-css "/style.css")]
    [:body
+    [:div.row-fluid [:div.top_bar {:style "background-color:#ccc"} "&nbsp;"]
+                    [:div.top_bar {:style "background-color:#031F73"} "&nbsp;"]
+                    [:div.top_bar {:style "background-color:#0A96A6"} "&nbsp;"]
+                    [:div.top_bar {:style "background-color:#F2B138"} "&nbsp;"]
+                    [:div.top_bar {:style "background-color:#F26A1B"} "&nbsp;"]
+                    [:div.top_bar {:style "background-color:#BF2C0B"} "&nbsp;"]]
     [:div.row-fluid.navigation_bar nav_bar]
-    [:div.row-fluid.content [:h1.offset1 "Simple stuff"]
     (cond
       (= page "home") [:div.row-fluid.home home_pg]
       (= page "gettingstart") [:div.row-fluid.start  start_pg]
       (= page "portfolio") [:div.row-fluid.port  port_pg]
       (= page "about") [:div.row-fluid.about  about_pg]
       :else [:div.row-fluid.home no_pg])]
-    (include-js "/app.js")]))
+    (include-js "/app.js")))
 
 (defroutes app-routes
   (GET "/style.css" [] (css))
