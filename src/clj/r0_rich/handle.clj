@@ -23,10 +23,12 @@
             width: 16%;
             float: left;}
           div.navigation_bar {
+            background-image: url('/img/richever_logo.png');
+            background-repeat: no-repeat;
+            background-position: 615px 150px;
             padding: 50px 0px 20px 0px;
-            font-size: 25px;
-            color: #fff;
-            transition: background-color,height 500ms;}
+            height: 70px;
+            transition: background-color 500ms ease,height 1500ms ease;}
           div.navigation_bar:hover {
             background-color: #000;
             height: 200px;
@@ -45,52 +47,57 @@
             height: 1px;
             background: #555;
             background: -webkit-gradient(linear, 0 0, 100% 0, from(#1A1E24), to(#1A1E24), color-stop(50%, #555));}
-          a:link {
+          .nav_bn {
             color:#6C7381;
+            font-size: 22px;
             font-family: advent-Re;
-            transition: color 500ms;}
-          a:visited {color:#6C7381;font-family: advent-Re; }
-          a:hover {color:#F5F5F5;font-family: advent-Re; }
-          a:active {color:#6C7381;font-family: advent-Re; }
+            transition: color 1s ease,font-size 200ms ease;}
+          .nav_bn:hover {
+            font-size: 25px;
+            color:#F5F5F5;}
+          .circle { 
+            width: 140px;
+            height: 240px;
+            padding: 8px 70px 8px 70px;
+            font-size: 25px;
+            background: #AEB6BD; 
+            background-image: url('/img/richever_logo.png');
+            background-position: -150px 0px;
+            background-repeat: no-repeat;
+            -moz-border-radius: 70px; 
+            -webkit-border-radius: 70px; 
+            border-radius: 70px;
+            padding-top: 239px;
+            transition: padding-top 1s ease, background-position 1s ease;}
+          .circle:hover {
+            padding-top: 95px;
+            background-position: 0px 0px;
+          }
+          a:link {color:#6C7381;}
+          a:visited {color:#6C7381; }
+          a:hover {text-decoration: none;}
+          a:active {color:#6C7381;}
           "})
 
 (defn def_page [title body]
   "compose page, convert title as id"
   (list  
     [:hr]
-    [:h2.offset3 title]
+    [:h2.offset5 title]
     [:hr]
-        [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))} 
-          [:div.span10.offset1 body]]))
+    [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))} 
+     body]))
 
 (defn def_nav [navs icons]
-  (list [:div.span1 ""] 
-        (map (fn [nav icon] 
-               (list [:div.span2 [:a {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
+  (list (map (fn [nav icon] 
+               (list [:div.span2 [:a.nav_bn {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
              navs icons)))
 
 (def home_pg (def_page "Home" 
                (list 
-                 [:div.row-fluid
-                 [:div.span3.trans_bg {:style "color:#E5533C;"} 
-                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consectetur dolor at posuere vehicula. Ut nec pretium felis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin a pellentesque magna, sit amet congue nulla. Pellentesque quis egestas eros. Integer eget laoreet urna. Maecenas eu aliquam urna. Sed sit amet ullamcorper quam."]
-                 [:div.span3.trans_bg {:style "color:#F5E346;"} 
-                  
-                  "Vestibulum dictum quam in vulputate gravida. Sed id purus quis erat commodo eleifend. Etiam blandit diam elit, in laoreet mauris ullamcorper eget. Quisque ac enim rhoncus, convallis eros sollicitudin, egestas ipsum. Praesent ultricies, lorem id tristique dictum, nisi nulla cursus augue, ut tincidunt lorem massa id felis. Sed sit amet tellus dui. Curabitur vulputate molestie odio. Etiam hendrerit leo eget tincidunt tempus. Pellentesque a turpis id est vestibulum blandit ut et leo. Fusce rhoncus auctor turpis vitae ullamcorper. Mauris varius lectus ac orci facilisis faucibus."
-                  [:br] [:br]
-                  [:img {:src "/img/img2.jpg"}]]
-                 [:div.span2.trans_bg {:style "color:#93D06D;"} 
-                  [:img {:src "/img/img1.jpg"}]
-                  [:br] [:br]
-                  "Pellentesque nisi neque, aliquam quis imperdiet id, sagittis nec diam. Phasellus vestibulum id mi in volutpat. Donec ut facilisis sem. Morbi sed mi iaculis, rutrum neque quis, lobortis quam. Vestibulum rhoncus ut neque quis dictum. Curabitur quam dolor, pellentesque ac lacinia non, imperdiet nec tortor. Cras sit amet vehicula diam, ut fermentum ante. Nullam varius tristique turpis et mollis. Vivamus congue et sem sit amet luctus."]
-                 [:div.span2.trans_bg {:style "color:#50AC6A;"} 
-                  [:img {:src "/img/img4.jpg"}]
-                  [:br] [:br]
-                  "Aliquam blandit aliquet hendrerit. Integer placerat diam quis sapien tincidunt, quis tempus risus lacinia. Nunc nec ligula mauris. Nunc imperdiet vehicula condimentum. Vestibulum volutpat gravida eros, vitae ullamcorper nulla congue id. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut rhoncus congue quam quis congue. Maecenas eget lacinia erat."]
-                 [:div.span2.trans_bg {:style "color:#227864;"} 
-                  [:img {:src "/img/img5.jpg"}]
-                  [:br] [:br]
-                  "Aenean quis eleifend eros, id gravida diam. Proin pellentesque mattis quam, et eleifend augue rhoncus sed. Ut nec egestas massa. Vivamus quis malesuada tellus, et ornare nulla. Curabitur dictum purus lorem, non vehicula purus condimentum nec. Proin ullamcorper, justo eget vulputate malesuada, elit ipsum semper neque, in semper nisl arcu vel nulla. Vestibulum nec ipsum convallis, porta tortor eu, lacinia enim."]])))
+                [:div.span3.offset1.circle "Web Design"]
+                [:div.span3.circle "Regina Store"]
+                [:div.span3.circle "Computer Repair"])))
 (def start_pg (def_page "Getting Start" 
                 "This is Getting Start"))
 (def port_pg (def_page "Portfolio" 
@@ -99,8 +106,8 @@
                 "This is About"))
 (def no_pg (def_page "404" 
              "404 not found"))
-(def nav_bar (def_nav ["Home" "Getting-Start" "Portfolio" "About"] 
-                      ["icon-home" "icon-fighter-jet" "icon-folder-open" "icon-lightbulb"]))
+(def nav_bar (def_nav ["Home" "Regina Store" "Web Design" "PC Repair" "Portfolio" "About"] 
+                      ["icon-home" "icon-fighter-jet" "icon-folder-open" "icon-lightbulb" "icon-lightbulb" "icon-lightbulb"]))
 
 (defn pages [page]
   "get page by pagename"
