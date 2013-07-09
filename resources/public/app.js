@@ -19935,4 +19935,10 @@ cljs.core.UUID.prototype.toString = function() {
 cljs.core.UUID;
 goog.provide("r0_rich.app");
 goog.require("cljs.core");
-console.log("yoyo");
+window.onload = function() {
+  var loading_img = document.getElementById("loading");
+  return function() {
+    loading_img.style.opacity = "0";
+    return loading_img.style.visibility = "hidden"
+  }
+}();

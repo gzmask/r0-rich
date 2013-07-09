@@ -22,14 +22,15 @@
             height: 4px;
             width: 16%;
             float: left;}
-          div.navigation_bar {
+          #navi_bar {
             background-image: url('/img/richever_logo.png');
+            background-color: #1A1E24;
             background-repeat: no-repeat;
             background-position: 615px 150px;
             padding: 50px 0px 20px 0px;
             height: 70px;
             transition: background-color 500ms ease,height 1500ms ease;}
-          div.navigation_bar:hover {
+          #navi_bar:hover {
             background-color: #000;
             height: 200px;
           }
@@ -72,6 +73,27 @@
           .circle:hover {
             padding-top: 95px;
             background-position: 0px 0px;
+          }
+          #loading {
+            padding: 150px 0 0 615px;
+            background: black;
+            width: 100%;
+            overflow:hidden;
+            position: absolute;
+            z-index: 10;
+            height: 100%;
+            transition: opacity 2s ease, visibility 0s linear 2s;
+          }
+          @-webkit-keyframes rotation {
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);}
+          }
+          @keyframes rotation {
+            from {-webkit-transform: rotate(0deg);}
+            to {-webkit-transform: rotate(360deg);}
+          }
+          #rotation_logo {
+            -webkit-animation: rotation 2s infinite linear;
           }
           a:link {color:#6C7381;}
           a:visited {color:#6C7381; }
@@ -119,13 +141,14 @@
     (include-css "/vendor/font-awesome/css/font-awesome.min.css")
     (include-css "/style.css")]
    [:body
+    [:div#loading [:img#rotation_logo {:src "/img/richever_logo.png"}] [:br] [:h3 "loading..."]]
     [:div.row-fluid [:div.top_bar {:style "background-color:#ccc"} "&nbsp;"]
                     [:div.top_bar {:style "background-color:#031F73"} "&nbsp;"]
                     [:div.top_bar {:style "background-color:#0A96A6"} "&nbsp;"]
                     [:div.top_bar {:style "background-color:#F2B138"} "&nbsp;"]
                     [:div.top_bar {:style "background-color:#F26A1B"} "&nbsp;"]
                     [:div.top_bar {:style "background-color:#BF2C0B"} "&nbsp;"]]
-    [:div.row-fluid.navigation_bar nav_bar]
+    [:div#navi_bar.row-fluid nav_bar]
     (cond
       (= page "home") [:div.row-fluid.home home_pg]
       (= page "gettingstart") [:div.row-fluid.start  start_pg]
