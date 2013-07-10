@@ -3,9 +3,9 @@
         net.cgrand.enlive-html))
 
 (def no_news [ {:title "404 not found"
-             :body "no news is good news"}])
+             :body "a not found is good found"}])
 
-(deftemplate no (html no_pg) []
-  [:div#news_feed :ul :li] (clone-for [new no_news]
+(deftemplate no (html no_pg) [news]
+  [:div#news_feed :ul :li] (clone-for [new news]
                               [:h2] (content (:title new))
                               [:div] (content (:body new))))

@@ -7,7 +7,7 @@
             {:title "second news"
              :body "no news is good news"}])
 
-(deftemplate store (html store_pg) []
-  [:div#news_feed :ul :li] (clone-for [new store_news]
+(deftemplate store (html store_pg) [news]
+  [:div#news_feed :ul :li] (clone-for [new news]
                               [:h2] (content (:title new))
                               [:div] (content (:body new))))

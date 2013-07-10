@@ -30,6 +30,6 @@
                     [:div.top_bar {:style "background-color:#F26A1B"} " "]
                     [:div.top_bar {:style "background-color:#BF2C0B"} " "]]
     [:div#navi_bar.row-fluid nav_bar]
-    [:div.row-fluid content]
+    content
     (include-js "/app.js")]))
 

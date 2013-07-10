@@ -1,13 +1,6 @@
 (ns r0_rich.handle
   (:use compojure.core
-        r0_rich.pages.page
-        r0_rich.controls.home
-        r0_rich.controls.store
-        r0_rich.controls.webdev
-        r0_rich.controls.repair
-        r0_rich.controls.port
-        r0_rich.controls.about
-        r0_rich.controls.no
+        r0_rich.controls.control
         r0_rich.pages.css
         ring.adapter.jetty)
   (:require [compojure.handler :as handler]
@@ -16,14 +9,14 @@
 (defroutes app-routes
   (GET "/style.css" [] (css))
   (route/resources "/")
-  (GET "/" [] (home))
-  (GET "/home" [] (home))
-  (GET "/reginastore" [] (store))
-  (GET "/webdesign" [] (webdev))
-  (GET "/pcrepair" [] (repair))
-  (GET "/portfolio" [] (port))
-  (GET "/about" [] (about))
-  (route/not-found (no)))
+  (GET "/" [] (home home_news))
+  (GET "/home" [] (home home_news))
+  (GET "/reginastore" [] (store store_news))
+  (GET "/webdesign" [] (webdev dev_news))
+  (GET "/pcrepair" [] (repair repair_news))
+  (GET "/portfolio" [] (port gallery_news))
+  (GET "/about" [] (about team_news))
+  (route/not-found (no no_news)))
 
 (def app
   (handler/site app-routes))
