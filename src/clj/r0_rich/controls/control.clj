@@ -36,9 +36,14 @@
              :body "a not found is good found"}])
 
 (deftemplate home (html home_pg) [news]
+  [:div#news_feed.row-fluid] (clone-for [new news]
+                                        [:div.head.span2.offset2] (content (:title new))
+                                        [:div.body.span2] (content (:body new))))
+
+(comment (deftemplate home (html home_pg) [news]
   [:div#news_feed :ul :li] (clone-for [new news]
                               [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+                              [:div] (content (:body new)))))
 
 (deftemplate store (html store_pg) [news]
   [:div#news_feed :ul :li] (clone-for [new news]

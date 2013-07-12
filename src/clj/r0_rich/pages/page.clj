@@ -6,37 +6,39 @@
 
 (defn def_page [title body]
   "compose page, convert title as id"
-  (list  
+  (list
     [:hr]
     [:h2.offset5 title]
     [:hr]
-    [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))} 
+    [:div.row-fluid {:id (str "pg_" (s/lower-case (s/replace title #"_|-|\s" "")))}
      body]))
 
-(def home_pg (pages (def_page "Home" 
-                (list 
+(def home_pg (pages (def_page "Home"
+                (list
                  [:div.row-fluid
-                  [:div.span3.offset1.circle [:a {:href "/webdesign"} "Web Design"]]
-                  [:div.span3.circle [:a {:href "/reginastore"} "Regina Store"]]
-                  [:div.span3.circle [:a {:href "/pcrepair"} "Computer Repair"]]]
+                  [:div.span3.offset1.circle.icon1 [:a.circle.icon {:href "/webdesign"} "Web Design"]]
+                  [:div.span3.circle.icon2 [:a.circle.icon {:href "/reginastore"} "Regina Store"]]
+                  [:div.span3.circle.icon3 [:a.circle.icon {:href "/pcrepair"} "Computer Repair"]]]
                  [:br] [:br] [:br] [:br] [:br]
-                 [:div.row-fluid
-                  [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]]))))
+                 [:div#news_feed.row-fluid
+                  [:div.head.span2.offset2 "atitle"]
+                  [:div.body.span2 "content"]]))))
+
 (def store_pg (pages (def_page "Regina Richever Store"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))
-(def port_pg (pages (def_page "Portfolio" 
+(def port_pg (pages (def_page "Portfolio"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))
-(def about_pg (pages (def_page "About" 
+(def about_pg (pages (def_page "About"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))
-(def webdev_pg (pages (def_page "Web Design" 
+(def webdev_pg (pages (def_page "Web Design"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))
-(def repair_pg (pages (def_page "PC Repair service" 
+(def repair_pg (pages (def_page "PC Repair service"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))
-(def no_pg (pages (def_page "404" 
+(def no_pg (pages (def_page "404"
                        [:div.row-fluid
                         [:div#news_feed.span4.offset2 [:ul [:li [:h2 "news title"] [:div "news content"]]]]])))

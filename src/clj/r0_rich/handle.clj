@@ -24,9 +24,7 @@
 (defn -main []
     (run-jetty #'app {:port 3000 :join? false}))
 
-
-(comment "repl: cpr - load all cpp - eval at point"
+(comment "repl"
 (defonce server (run-jetty #'app {:port 3000 :join? false}))
 (.start server)
-(.stop server)
-)
+(.stop server))

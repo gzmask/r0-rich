@@ -1,6 +1,6 @@
 (ns r0_rich.pages.css)
 
-(defn css [] 
+(defn css []
   {:headers {"Content-Type" "text/css"}
    :body "body {
             background-color: #1A1E24;
@@ -49,21 +49,36 @@
           .nav_bn:hover {
             font-size: 25px;
             color:#F5F5F5;}
-          .circle { 
+          .circle {
             width: 140px;
             height: 240px;
             padding: 8px 70px 8px 70px;
             font-size: 25px;
-            background: #AEB6BD; 
-            background-image: url('/img/richever_logo.png');
-            background-position: -150px 0px;
+            -moz-border-radius: 70px;
+            -webkit-border-radius: 70px;
+            border-radius: 70px;}
+          .icon1 {
+            background: #283771;
+            background-image: url('/img/design_icon.png');
             background-repeat: no-repeat;
-            -moz-border-radius: 70px; 
-            -webkit-border-radius: 70px; 
-            border-radius: 70px;
+            background-position: -350px 0px;
+            padding-top: 239px;
+            transition: padding-top 1s ease, background-position 2s linear;}
+          .icon2 {
+            background: #283771;
+            background-image: url('/img/design_icon.png');
+            background-repeat: no-repeat;
+            background-position: -350px 0px;
             padding-top: 239px;
             transition: padding-top 1s ease, background-position 1s ease;}
-          .circle:hover {
+          .icon3 {
+            background: #283771;
+            background-image: url('/img/design_icon.png');
+            background-repeat: no-repeat;
+            background-position: -350px 0px;
+            padding-top: 239px;
+            transition: padding-top 1s ease, background-position 1s ease;}
+          .icon1:hover, .icon2:hover, .icon3:hover {
             padding-top: 95px;
             background-position: 0px 0px;
           }
@@ -88,9 +103,13 @@
           #rotation_logo {
             -webkit-animation: rotation 2s infinite linear;
           }
-          a:link {color:#6C7381;}
-          a:visited {color:#6C7381; }
-          a:hover {text-decoration: none;}
-          a:active {color:#6C7381;}
+          a.icon:link {background-color: #1A1E24; padding: 5px; color:#fff;}
+          a.icon:visited {color:#fff; }
+          a.icon:hover {text-decoration: none;}
+          a.icon:active {color:#fff;}
+          a.nav_bn:link {color:#6C7381;}
+          a.nav_bn:visited {color:#6C7381; }
+          a.nav_bn:hover {text-decoration: none;}
+          a.nav_bn:active {color:#6C7381;}
           "})
 
