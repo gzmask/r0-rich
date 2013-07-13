@@ -22,6 +22,7 @@
             background-position: 615px 150px;
             padding: 50px 0px 20px 0px;
             height: 70px;
+            -webkit-transition: background-color 500ms ease,height 1500ms ease;
             transition: background-color 500ms ease,height 1500ms ease;}
           #navi_bar:hover {
             background-color: #000;
@@ -45,10 +46,11 @@
             color:#6C7381;
             font-size: 22px;
             font-family: advent-Re;
+            -webkit-transition: color 1s ease,font-size 200ms ease;
             transition: color 1s ease,font-size 200ms ease;}
           .nav_bn:hover {
-            font-size: 25px;
-            color:#F5F5F5;}
+            font-size: 28px;
+            color:#FFF;}
           .circle {
             width: 140px;
             height: 240px;
@@ -58,29 +60,36 @@
             -webkit-border-radius: 70px;
             border-radius: 70px;}
           .icon1 {
-            background: #283771;
+            opacity: 0.2;
+            background: #97b839;
             background-image: url('/img/design_icon.png');
             background-repeat: no-repeat;
-            background-position: -350px 0px;
+            background-position: 80px 0px;
             padding-top: 239px;
-            transition: padding-top 1s ease, background-position 2s linear;}
+            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
+            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
           .icon2 {
-            background: #283771;
-            background-image: url('/img/design_icon.png');
+            opacity: 0.2;
+            background: #1a34a4;
+            background-image: url('/img/store_icon.png');
             background-repeat: no-repeat;
-            background-position: -350px 0px;
+            background-position: 80px 0px;
             padding-top: 239px;
-            transition: padding-top 1s ease, background-position 1s ease;}
+            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
+            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
           .icon3 {
-            background: #283771;
+            opacity: 0.2;
+            background: #fce700;
             background-image: url('/img/design_icon.png');
             background-repeat: no-repeat;
-            background-position: -350px 0px;
+            background-position: 80px 0px;
             padding-top: 239px;
-            transition: padding-top 1s ease, background-position 1s ease;}
+            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
+            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
           .icon1:hover, .icon2:hover, .icon3:hover {
+            opacity: 1.0;
             padding-top: 95px;
-            background-position: 0px 0px;
+            background-position: -350px 0px;
           }
           #loading {
             padding: 150px 0 0 615px;
@@ -90,6 +99,7 @@
             position: absolute;
             z-index: 10;
             height: 100%;
+            -webkit-transition: opacity 2s ease, visibility 0s linear 2s;
             transition: opacity 2s ease, visibility 0s linear 2s;
           }
           @-webkit-keyframes rotation {
@@ -109,7 +119,7 @@
           a.icon:active {color:#fff;}
           a.nav_bn:link {color:#6C7381;}
           a.nav_bn:visited {color:#6C7381; }
-          a.nav_bn:hover {text-decoration: none;}
+          a.nav_bn:hover {text-decoration: none;color:#FFF; }
           a.nav_bn:active {color:#6C7381;}
           "})
 

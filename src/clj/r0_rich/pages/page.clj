@@ -18,7 +18,7 @@
                  [:div.row-fluid
                   [:div.span3.offset1.circle.icon1 [:a.circle.icon {:href "/webdesign"} "Web Design"]]
                   [:div.span3.circle.icon2 [:a.circle.icon {:href "/reginastore"} "Regina Store"]]
-                  [:div.span3.circle.icon3 [:a.circle.icon {:href "/pcrepair"} "Computer Repair"]]]
+                  [:div.span3.circle.icon3 [:a.circle.icon {:href "/pcrepair"} "PC Service"]]]
                  [:br] [:br] [:br] [:br] [:br]
                  [:div#news_feed.row-fluid
                   [:div.head.span2.offset2 "atitle"]
