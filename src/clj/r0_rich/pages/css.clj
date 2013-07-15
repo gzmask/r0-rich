@@ -8,6 +8,7 @@
             background-position: 10px 50px;
             background-size: 1280px 800px;
             color: #FFFFFF;
+            font-size: 20px;
             font-family: advent-Bd1;}
           div.content {
             font-size: 20px;}
@@ -26,8 +27,7 @@
             transition: background-color 500ms ease,height 1500ms ease;}
           #navi_bar:hover {
             background-color: #000;
-            height: 200px;
-          }
+            height: 200px; }
           @font-face {
             font-family: advent-Re;
             src: url('fonts/advent-Re.otf');}
@@ -60,35 +60,35 @@
             -webkit-border-radius: 70px;
             border-radius: 70px;}
           .icon1 {
-            opacity: 0.2;
-            background: #97b839;
+            opacity: 0.0;
+            background: #90dd1f;
             background-image: url('/img/design_icon.png');
             background-repeat: no-repeat;
             background-position: 80px 0px;
-            padding-top: 239px;
-            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
-            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
+            padding-top: 95px;
+            -webkit-transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;
+            transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;}
           .icon2 {
-            opacity: 0.2;
+            opacity: 0.0;
             background: #1a34a4;
             background-image: url('/img/store_icon.png');
             background-repeat: no-repeat;
             background-position: 80px 0px;
-            padding-top: 239px;
-            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
-            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
+            padding-top: 95px;
+            -webkit-transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;
+            transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;}
           .icon3 {
-            opacity: 0.2;
+            opacity: 0.0;
             background: #fce700;
-            background-image: url('/img/design_icon.png');
+            background-image: url('/img/service_icon.png');
             background-repeat: no-repeat;
             background-position: 80px 0px;
-            padding-top: 239px;
-            -webkit-transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;
-            transition: opacity 0.5s ease, padding-top 1s ease, background-position 2s ease;}
+            padding-top: 95px;
+            -webkit-transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;
+            transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;}
           .icon1:hover, .icon2:hover, .icon3:hover {
             opacity: 1.0;
-            padding-top: 95px;
+            padding-top: 259px;
             background-position: -350px 0px;
           }
           #loading {
@@ -111,12 +111,11 @@
             to {-webkit-transform: rotate(360deg);}
           }
           #rotation_logo {
-            -webkit-animation: rotation 2s infinite linear;
-          }
-          a.icon:link {background-color: #1A1E24; padding: 5px; color:#fff;}
-          a.icon:visited {color:#fff; }
-          a.icon:hover {text-decoration: none;}
-          a.icon:active {color:#fff;}
+            -webkit-animation: rotation 2s infinite linear;}
+          a.icon:link {opacity: 1.0; background-color: #1A1E24; padding: 5px; color:#888;}
+          a.icon:visited {opacity: 1.0; color:#888; }
+          a.icon:hover {opacity: 1.0; color:#fff; text-decoration: none;}
+          a.icon:active {opacity: 1.0; color:#fff;}
           a.nav_bn:link {color:#6C7381;}
           a.nav_bn:visited {color:#6C7381; }
           a.nav_bn:hover {text-decoration: none;color:#FFF; }

@@ -13,7 +13,7 @@
   (GET "/home" [] (home home_news))
   (GET "/reginastore" [] (store store_news))
   (GET "/webdesign" [] (webdev dev_news))
-  (GET "/pcrepair" [] (repair repair_news))
+  (GET "/pcservice" [] (repair repair_news))
   (GET "/portfolio" [] (port gallery_news))
   (GET "/about" [] (about team_news))
   (route/not-found (no no_news)))

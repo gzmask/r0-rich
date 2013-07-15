@@ -2,10 +2,10 @@
   (:use r0_rich.pages.page
         net.cgrand.enlive-html))
 
-(def home_news [ {:title "first news"
-             :body "no news is good news"}
-            {:title "second news"
-             :body "no news is good news"}])
+(def home_news [ {:title "Store grand openning"
+             :body "Our store is schduled to open at July! -14th, July"}
+            {:title "Web Site Launch"
+             :body "Welcome to Richever.ca"}])
 
 (def store_news [ {:title "store news"
              :body "no news is good news"}
@@ -37,8 +37,8 @@
 
 (deftemplate home (html home_pg) [news]
   [:div#news_feed.row-fluid] (clone-for [new news]
-                                        [:div.head.span2.offset2] (content (:title new))
-                                        [:div.body.span2] (content (:body new))))
+                                        [:div.head] (content (:title new))
+                                        [:div.body] (content (:body new))))
 
 (comment (deftemplate home (html home_pg) [news]
   [:div#news_feed :ul :li] (clone-for [new news]

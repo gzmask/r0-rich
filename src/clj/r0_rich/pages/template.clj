@@ -5,17 +5,17 @@
 
 
 (defn def_nav [navs icons]
-  (list (map (fn [nav icon] 
+  (list (map (fn [nav icon]
                (list [:div.span2 [:a.nav_bn {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
              navs icons)))
 
-(def nav_bar (def_nav ["Home" "Regina Store" "Web Design" "PC Repair" "Portfolio" "About"] 
-                      ["icon-home" "icon-fighter-jet" "icon-folder-open" "icon-lightbulb" "icon-lightbulb" "icon-lightbulb"]))
+(def nav_bar (def_nav ["Home" "Regina Store" "Web Design" "PC Service" "Portfolio" "About"]
+                      ["icon-home" "icon-truck" "icon-pencil" "icon-wrench" "icon-book" "icon-info-sign"]))
 
 (defn pages [content]
   "get page by pagename"
   (list
-   [:head 
+   [:head
     [:title "Richever Technology Ltd"]
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
     (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
