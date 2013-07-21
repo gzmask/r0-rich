@@ -11,9 +11,9 @@
   (route/resources "/")
   (GET "/" [] (home home_news))
   (GET "/home" [] (home home_news))
-  (GET "/reginastore" [] (store store_news))
-  (GET "/webdesign" [] (webdev dev_news))
-  (GET "/pcservice" [] (repair repair_news))
+  (GET "/store" [] (store store_news))
+  (GET "/web" [] (webdev dev_news))
+  (GET "/pcrepair" [] (repair repair_news))
   (GET "/portfolio" [] (port gallery_news))
   (GET "/about" [] (about team_news))
   (route/not-found (no no_news)))
@@ -22,7 +22,7 @@
   (handler/site app-routes))
 
 (defn -main []
-    (run-jetty #'app {:port 3000 :join? false}))
+    (run-jetty #'app {:port 80 :join? false}))
 
 (comment "repl"
 (defonce server (run-jetty #'app {:port 3000 :join? false}))

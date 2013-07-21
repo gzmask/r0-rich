@@ -9,7 +9,7 @@
                (list [:div.span2 [:a.nav_bn {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
              navs icons)))
 
-(def nav_bar (def_nav ["Home" "Regina Store" "Web Design" "PC Service" "Portfolio" "About"]
+(def nav_bar (def_nav ["Home" "Store" "Web" "PC Repair" "Portfolio" "About"]
                       ["icon-home" "icon-truck" "icon-pencil" "icon-wrench" "icon-book" "icon-info-sign"]))
 
 (defn pages [content]

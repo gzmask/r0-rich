@@ -3,7 +3,7 @@
         net.cgrand.enlive-html))
 
 (def home_news [ {:title "Store grand openning"
-             :body "Our store is schduled to open at July! -14th, July"}
+             :body "Our store is schduled to open at July"}
             {:title "Web Site Launch"
              :body "Welcome to Richever.ca"}])
 
