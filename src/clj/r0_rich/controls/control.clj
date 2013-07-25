@@ -1,11 +1,23 @@
 (ns r0_rich.controls.control
   (:use r0_rich.pages.page
-        net.cgrand.enlive-html))
+        net.cgrand.enlive-html)
+  (:require [clj-http.client :as client]))
 
-(def home_news [ {:title "Store grand openning"
-             :body "Store is openning this week."}
-            {:title "Web Site Launch"
-             :body "Welcome to Richever.ca"}])
+(def weibo_login-url "http://www.weibo.com/login.php?url=http%253A%252F%252Fweibo.com%252Fhome")
+
+(def result_str (client/post weibo_login-url {:form-params {:loginname "gzmask@gmail.com" :password "saasdf"}}))
+
+
+(defn fetch-url [url]
+  (html/html-resource (java.net.URL. url)))
+
+(def home_news [ 
+                {:title "Store opens at July 24th" 
+                 :body "Store is now opened. Welcome to visit us at 2139 8th Ave!"}
+                {:title "Store grand openning" 
+                 :body "Store is openning this week."}
+                {:title "Web Site Launch" 
+                 :body "Welcome to Richever.ca"}])
 
 (def store_news [ {:title "store news"
              :body "We have our first batch of goods in store right now."}
@@ -32,41 +44,37 @@
              :body "a not found is good found"}])
 
 (deftemplate home (html home_pg) [news]
-  [:div#news_feed.row-fluid] (clone-for [new news]
-                                        [:div.head] (content (:title new))
-                                        [:div.body] (content (:body new))))
-
-(comment (deftemplate home (html home_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new)))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                                        [:div.newshead] (content (:title item))
+                                        [:div.newsbody] (content (:body item))
+                                        ))
 
 (deftemplate store (html store_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))
+                              [:div] (content (:body item))))
 
 (deftemplate webdev (html webdev_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))
+                              [:div] (content (:body item))))
 
 (deftemplate repair (html repair_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))
+                              [:div] (content (:body item))))
 
 (deftemplate port (html port_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))/
+                              [:div] (content (:body item))))
 
 (deftemplate about (html about_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))
+                              [:div] (content (:body item))))
 
 (deftemplate no (html no_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [new news]
-                              [:h2] (content (:title new))
-                              [:div] (content (:body new))))
+  [:div#news_feed :ul :li] (clone-for [item news]
+                              [:h2] (content (:title item))
+                              [:div] (content (:body item))))

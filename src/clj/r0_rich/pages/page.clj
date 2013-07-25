@@ -21,8 +21,8 @@
                   [:div.span3.circle.icon3 [:a.circle.icon {:href "/pcrepair"} "PC Service"]]]
                  [:br] [:br]
                  [:div#news_feed.row-fluid
-                  [:div.head.span2.offset2 "atitle"]
-                  [:div.body.span8 "content"]]))))
+                  [:div.newshead.span2.offset2 "atitle"]
+                  [:div.newsbody.span8 "content"][:br][:br][:br]]))))
 
 (def store_pg (pages (def_page "Regina Richever Store"
                        [:div.row-fluid

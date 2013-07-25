@@ -16,6 +16,14 @@
             height: 4px;
             width: 16%;
             float: left;}
+          div.newshead {
+            padding: 5px 0px 0px 5px;
+            background-color: #000;
+          }
+          div.newsbody {
+            padding: 5px 0px 0px 5px;
+            background-color: #000;
+          }
           #navi_bar {
             background-image: url('/img/richever_logo.png');
             background-color: #1A1E24;
