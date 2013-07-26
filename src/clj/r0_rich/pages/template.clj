@@ -15,10 +15,10 @@
    [:head
     [:meta {:content "cc9d2c70d8838f49" :property "wb:webmaster"}]
     [:title "Richever Technology Ltd"]
-    (include-css "/vendor/bootstrap/css/bootstrap.min.css")
-    (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
-    (include-css "/vendor/font-awesome/css/font-awesome.min.css")
-    (include-css "/style.css")]
+    [:link {:type "text/css" :rel "stylesheet" :href "/vendor/bootstrap/css/bootstrap.min.css"}]
+    [:link {:type "text/css" :rel "stylesheet" :href "/vendor/bootstrap/css/bootstrap-responsive.css"}]
+    [:link {:type "text/css" :rel "stylesheet" :href "/vendor/font-awesome/css/font-awesome.min.css"}]
+    [:link {:type "text/css" :rel "stylesheet" :href "/style.css"}]]
    [:body
     [:div#loading [:img#rotation_logo {:src "/img/richever_logo.png"}] [:br] [:h3 "loading..."]]
     [:div.row-fluid [:div.top_bar {:style "background-color:#ccc"} " "]
@@ -29,4 +29,4 @@
                     [:div.top_bar {:style "background-color:#BF2C0B"} " "]]
     [:div#navi_bar.row-fluid nav_bar]
     content
-    (include-js "/app.js")]))
+    [:script {:src "/app.js" :type "text/javascript"}]]))
