@@ -3,69 +3,88 @@
         net.cgrand.enlive-html))
 
 (def home_news [ 
-                {:title "Store opens at July 24th" 
-                 :body "Store is now opened. Welcome to visit us at 2139 8th Ave!"}
+                {:title "Welcome Message:" 
+                 :time "26th, July, 2013"
+                 :body "Hello Dear customers. This is Richever Tech. We are a group of technology enthusiasts. We believe that computers can be cost effective and green, yet powerful. We are working hard to bring affordable computing technologies to Regina. We have an affordable line of linux powered PCs in store, and variable mobile accessories to enable your mobile devices. As for businesses, we got a team of high portfolio web developers to help your business growth. Welcome."}
+                {:title "Store opened!" 
+                 :time "24th, July, 2013"
+                 :body "Store is now opened. Welcome to our store at 2139 8th Ave. We are having an openning sale event in store right now."}
                 {:title "Store grand openning" 
+                 :time "16th, July, 2013"
                  :body "Store is openning this week."}
                 {:title "Web Site Launch" 
-                 :body "Welcome to Richever.ca"}])
+                 :time "10th, July, 2013"
+                 :body "Welcome to Richever.ca. Our website is still under very heavy development. Please check back on us frequently and you will be able to see lots improvements."}])
 
-(def store_news [ {:title "store news"
-             :body "We have our first batch of goods in store right now."}
-            {:title "Importing goods from China."
-             :body "Our goods are on the way."}])
+(def store_news [ {:title "Richever Store opened"
+                   :time "24th, July, 2013"
+             :body "Our brick-and-mortar store is now opened at 2139 8th Ave, Regina, Saskatchewan! Please checkout our openning sale."}])
 
-(def dev_news [ {:title "web development news"
-             :body "no news is good news"}
+(def dev_news [ {:title "Web office"
+                  :time "26th, July, 2013"
+             :body "Our Web Development office is opened at 2139 8th Ave, Regina"}
             {:title "Carment's tea is lunched!"
+             :time "1st, May, 2013"
              :body "please visit carmenstea.ca to check it out!"}
             {:title "c&w renovations is lunched!"
+             :time "2nd, April, 2013"
              :body "please visit cwrenos.ca to check it out!"}])
 
 (def repair_news [ {:title "university discount"
-             :body "university students and employees will get 90% discount."} ])
+             :time "26th, July, 2013"
+             :body "90% discount for all university students and employees."} ])
 
 (def gallery_news [ {:title "design news"
+             :time "20th, July, 2013"
              :body "no news yet"}])
 
 (def team_news [ {:title "member news"
+             :time "20th, July, 2013"
              :body "no news yet"}])
 
 (def no_news [ {:title "404 not found"
+             :time "20th, July, 2013"
              :body "a not found is good found"}])
 
 (deftemplate home (html home_pg) [news]
   [:div#news_feed.row-fluid] (clone-for [item news]
                                         [:div.newshead] (content (:title item))
                                         [:div.newsbody] (content (:body item))
+                                        [:div.newstime] (content (:time item))
                                         ))
 
 (deftemplate store (html store_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))
 
 (deftemplate webdev (html webdev_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))
 
 (deftemplate repair (html repair_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))
 
 (deftemplate port (html port_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))/
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))
 
 (deftemplate about (html about_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))
 
 (deftemplate no (html no_pg) [news]
-  [:div#news_feed :ul :li] (clone-for [item news]
-                              [:h2] (content (:title item))
-                              [:div] (content (:body item))))
+  [:div#news_feed.row-fluid] (clone-for [item news]
+                              [:div.newshead] (content (:title item))
+                              [:div.newstime] (content (:time item))
+                              [:div.newsbody] (content (:body item))))

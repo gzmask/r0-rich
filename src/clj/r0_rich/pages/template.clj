@@ -1,8 +1,5 @@
 (ns r0_rich.pages.template
-  (:use hiccup.core
-        hiccup.page)
   (:require [clojure.string :as s]))
-
 
 (defn def_nav [navs icons]
   (list (map (fn [nav icon]
@@ -33,4 +30,3 @@
     [:div#navi_bar.row-fluid nav_bar]
     content
     (include-js "/app.js")]))
-

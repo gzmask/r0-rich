@@ -8,8 +8,6 @@
   :dependencies [[ring/ring-core "1.1.8"]
                  [ring/ring-jetty-adapter "1.1.8"]
                  [enlive "1.1.1"]
-                 [hiccup "1.0.3"]
-                 [clj-http "0.7.6"]
                  [compojure "1.1.5"]
                  [org.clojure/clojure "1.5.1"]]
   :source-paths ["src/clj"]

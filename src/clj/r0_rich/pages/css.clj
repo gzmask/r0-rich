@@ -17,11 +17,14 @@
             width: 16%;
             float: left;}
           div.newshead {
-            padding: 5px 0px 0px 5px;
-            background-color: #000;
+            padding: 8px 0px 0px 5px;
+            color: #000;
+            background-color: #ccc;
+            border-radius: 5px;
           }
           div.newsbody {
-            padding: 5px 0px 0px 5px;
+            padding: 15px 0px 15px 15px;
+            border-radius: 8px;
             background-color: #000;
           }
           #navi_bar {
