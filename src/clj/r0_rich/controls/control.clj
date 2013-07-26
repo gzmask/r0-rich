@@ -1,15 +1,6 @@
 (ns r0_rich.controls.control
   (:use r0_rich.pages.page
-        net.cgrand.enlive-html)
-  (:require [clj-http.client :as client]))
-
-(def weibo_login-url "http://www.weibo.com/login.php?url=http%253A%252F%252Fweibo.com%252Fhome")
-
-(def result_str (client/post weibo_login-url {:form-params {:loginname "gzmask@gmail.com" :password "saasdf"}}))
-
-
-(defn fetch-url [url]
-  (html/html-resource (java.net.URL. url)))
+        net.cgrand.enlive-html))
 
 (def home_news [ 
                 {:title "Store opens at July 24th" 

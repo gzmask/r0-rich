@@ -16,6 +16,7 @@
   "get page by pagename"
   (list
    [:head
+    [:meta {:property "wb:webmaster" :content "cc9d2c70d8838f49"}]
     [:title "Richever Technology Ltd"]
     (include-css "/vendor/bootstrap/css/bootstrap.min.css")
     (include-css "/vendor/bootstrap/css/bootstrap-responsive.css")
