@@ -62,7 +62,7 @@
                        [:br]
                        [:div.row-fluid
                         [:div.offset2.span3 "2139 8th Avenue Regina S4R 1G1"]
-                        [:div.span3 "Tel 306-352-RICH(7472)"]]
+                        [:div.span3 "Tel 306-352-RICH(7424)"]]
                        [:div#news_feed.row-fluid
                         [:div.newshead.span2.offset2 "atitle"]
                         [:div.newsbody.span6 "content"]

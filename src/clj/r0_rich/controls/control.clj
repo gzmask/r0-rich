@@ -6,33 +6,33 @@
                 {:title "Welcome Message:" 
                  :time "26th, July, 2013"
                  :body "Hello Dear customers. This is Richever Tech. We are a group of technology enthusiasts. We believe that computers can be cost effective and green, yet powerful. We are working hard to bring affordable computing technologies to Regina. We have an affordable line of linux powered PCs in store, and variable mobile accessories to enable your mobile devices. As for businesses, we got a team of high portfolio web developers to help your business growth. Welcome."}
-                {:title "Store opened!" 
+                {:title "Store open!" 
                  :time "24th, July, 2013"
-                 :body "Store is now opened. Welcome to our store at 2139 8th Ave. We are having an openning sale event in store right now."}
+                 :body "Store is now open. Welcome to our store at 2139 8th Ave. We are having an openning sale event in store right now."}
                 {:title "Store grand openning" 
                  :time "16th, July, 2013"
                  :body "Store is openning this week."}
                 {:title "Web Site Launch" 
                  :time "10th, July, 2013"
-                 :body "Welcome to Richever.ca. Our website is still under very heavy development. Please check back on us frequently and you will be able to see lots improvements."}])
+                 :body "Welcome to Richever.ca. Our website is still under very heavy development. Please check back on us frequently and you will be able to see lots of improvements."}])
 
-(def store_news [ {:title "Richever Store opened"
+(def store_news [ {:title "Richever Store open"
                    :time "24th, July, 2013"
-             :body "Our brick-and-mortar store is now opened at 2139 8th Ave, Regina, Saskatchewan! Please checkout our openning sale."}])
+             :body "Our brick-and-mortar store is now open at 2139 8th Ave, Regina, Saskatchewan! Please checkout our openning sale."}])
 
 (def dev_news [ {:title "Web office"
                   :time "26th, July, 2013"
-             :body "Our Web Development office is opened at 2139 8th Ave, Regina"}
-            {:title "Carment's tea is lunched!"
+             :body "Our Web Development office is open at 2139 8th Ave, Regina"}
+            {:title "Carment's tea is launched!"
              :time "1st, May, 2013"
-             :body "please visit carmenstea.ca to check it out!"}
-            {:title "c&w renovations is lunched!"
+             :body "please visit http://www.carmenstea.ca to check it out!"}
+            {:title "C&W renovations is launched!"
              :time "2nd, April, 2013"
-             :body "please visit cwrenos.ca to check it out!"}])
+             :body "please visit http://www.cwrenos.ca to check it out!"}])
 
 (def repair_news [ {:title "university discount"
              :time "26th, July, 2013"
-             :body "90% discount for all university students and employees."} ])
+             :body "10% off discount for all university students and employees."} ])
 
 (def gallery_news [ {:title "design news"
              :time "20th, July, 2013"
