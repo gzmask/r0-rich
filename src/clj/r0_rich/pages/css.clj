@@ -27,6 +27,10 @@
             border-radius: 8px;
             background-color: #000;
           }
+          div.gmap {
+           width: 425px;
+           height: 350px;
+          }
           #navi_bar {
             background-image: url('/img/richever_logo.png');
             background-color: #1A1E24;

@@ -35,34 +35,33 @@
                          [:div.newstime.span2 "time"]])))
 (def about_pg (pages (def_page "About"
                        (list
-                       [:div.row-fluid
-                        [:div.offset2.span4.gmap
+                       [:div.row-fluid.offset2
                          [:iframe {:width "425"
                                    :height "350"
                                    :frameborder "0"
                                    :scrolling "no"
                                    :marginheight "0"
-                                   :src "https://www.google.com/maps?sll=50.456734183219375,-104.61224801231195&sspn=0.00611299109450911,0.009151063792004675&t=m&q=2139+8+Ave,+Regina,+SK,+Canada&dg=opt&ie=UTF8&hq=&hnear=2139+8+Ave,+Regina,+Saskatchewan+S4R+1G1,+Canada&z=14&ll=50.456725,-104.612243&output=embed"}]]
+                                   :src "https://www.google.com/maps?sll=50.456734183219375,-104.61224801231195&sspn=0.00611299109450911,0.009151063792004675&t=m&q=2139+8+Ave,+Regina,+SK,+Canada&dg=opt&ie=UTF8&hq=&hnear=2139+8+Ave,+Regina,+Saskatchewan+S4R+1G1,+Canada&z=14&ll=50.456725,-104.612243&output=embed"}]] 
+                       [:br]
+                       [:div.offset2.row-fluid
                         [:div.span3
                          [:div.row-fluid "Office Hours:"]
                          [:br]
-                         [:div.row-fluid "Monday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Monday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Tuesday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Tuesday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Wednesday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Wednesday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Thursday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Thursday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Friday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Friday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Saturday: 10 am ~ 6 pm"]
+                         [:div.row-fluid "Saturday: 10am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "A.K.A 10 am to 6 pm except Sunday"]]]
+                         [:div.row-fluid "A.K.A 10 am to 6 pm except Sunday"]] 
+                        [:div.span3 "2139 8th Avenue Regina S4R 1G1" [:br][:br] "Tel 306-352-RICH(7424)"]]
                        [:br]
-                       [:div.row-fluid
-                        [:div.offset2.span3 "2139 8th Avenue Regina S4R 1G1"]
-                        [:div.span3 "Tel 306-352-RICH(7424)"]]
                        [:div#news_feed.row-fluid
                         [:div.newshead.span2.offset2 "atitle"]
                         [:div.newsbody.span6 "content"]
