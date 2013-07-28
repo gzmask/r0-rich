@@ -23,11 +23,17 @@
                   [:div.newsbody.span6 "content"]
                   [:div.newstime.span2 "time"]]))))
 
-(def store_pg (pages (def_page "Regina Richever Store"
+(def store_pg (pages (def_page "Regina Richever Store" 
+                        (list
+                        [:div.row-fluid 
+                          [:div#slides.span8.offset2 
+                            [:img {:src "/img/store_gallery/001.jpg"}] 
+                            [:img {:src "/img/store_gallery/002.jpg"}]]]
+                        [:br]
                         [:div#news_feed.row-fluid
                          [:div.newshead.span2.offset2 "atitle"]
                          [:div.newsbody.span6 "content"]
-                         [:div.newstime.span2 "time"]])))
+                         [:div.newstime.span2 "time"]]))))
 (def port_pg (pages (def_page "Portfolio"
                         [:div#news_feed.row-fluid
                          [:div.newshead.span2.offset2 "atitle"]

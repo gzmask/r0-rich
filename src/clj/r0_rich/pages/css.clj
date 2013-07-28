@@ -10,6 +10,69 @@
             color: #FFFFFF;
             font-size: 20px;
             font-family: advent-Bd1;}
+            /* Prevents slides from flashing */ 
+          #slides {
+            display:none;}
+          .slidesjs-pagination {
+            margin: 6px 0 0;
+            float: right;
+            list-style: none;
+          }
+          .slidesjs-pagination li {
+            float: left;
+            margin: 0 1px;
+          }
+          .slidesjs-pagination li a {
+            display: block;
+            width: 13px;
+            height: 0;
+            padding-top: 13px;
+            background-image: url(img/pagination.png);
+            background-position: 0 0;
+            float: left;
+            overflow: hidden;
+          }
+          a.slidesjs-next,
+          a.slidesjs-previous,
+          a.slidesjs-play,
+          a.slidesjs-stop {
+            background-image: url(img/btns-next-prev.png);
+            background-repeat: no-repeat;
+            display:block;
+            width:12px;
+            height:18px;
+            overflow: hidden;
+            text-indent: -9999px;
+            float: left;
+            margin-right:5px;
+          }
+          a.slidesjs-next {
+            margin-right:10px;
+            background-position: -12px 0;
+          }
+          a:hover.slidesjs-next {
+            background-position: -12px -18px;
+          }
+          a.slidesjs-previous {
+            background-position: 0 0;
+          }
+          a:hover.slidesjs-previous {
+            background-position: 0 -18px;
+          }
+          a.slidesjs-play {
+            width:15px;
+            background-position: -25px 0;
+          }
+          a:hover.slidesjs-play {
+            background-position: -25px -18px;
+          }
+          a.slidesjs-stop {
+            width:18px;
+            background-position: -41px 0;
+          }
+          a:hover.slidesjs-stop {
+            background-position: -41px -18px;
+          }
           div.content {
             font-size: 20px;}
           div.top_bar {
