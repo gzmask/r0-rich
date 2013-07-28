@@ -32,9 +32,8 @@ var ie = (function(){
     
 }());
 
-if (ie) {
+if (ie<10) {
   // similar behavior as an HTTP redirect
   window.location.replace("http://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages");
   // similar behavior as clicking on a link
-  window.location.href = "http://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages";
-}
+  window.location.href = "http://windows.microsoft.com/en-us/internet-explorer/ie-10-worldwide-languages";}
