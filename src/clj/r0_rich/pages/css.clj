@@ -171,8 +171,6 @@
           }
           #loading {
             padding: 150px 0 0 615px;
-            background: black;
-            width: 100%;
             overflow:hidden;
             position: absolute;
             z-index: 10;

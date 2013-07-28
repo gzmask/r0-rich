@@ -50,8 +50,7 @@
   [:div#news_feed.row-fluid] (clone-for [item news]
                                         [:div.newshead] (content (:title item))
                                         [:div.newsbody] (content (:body item))
-                                        [:div.newstime] (content (:time item))
-                                        ))
+                                        [:div.newstime] (content (:time item))))
 
 (deftemplate store (html store_pg) [news]
   [:div#news_feed.row-fluid] (clone-for [item news]

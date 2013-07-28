@@ -18,6 +18,7 @@
     [:script {:src "http://code.jquery.com/jquery-latest.min.js" :type "text/javascript"}]
     [:script {:src "/vendor/slidejs/jquery.slides.min.js" :type "text/javascript"}]
     [:script {:src "/vendor/slidejs/slide.js" :type "text/javascript"}]
+    [:script {:src "/ie.js" :type "text/javascript"}]
     [:link {:type "text/css" :rel "stylesheet" :href "/vendor/bootstrap/css/bootstrap.min.css"}]
     [:link {:type "text/css" :rel "stylesheet" :href "/vendor/bootstrap/css/bootstrap-responsive.css"}]
     [:link {:type "text/css" :rel "stylesheet" :href "/vendor/font-awesome/css/font-awesome.min.css"}]
