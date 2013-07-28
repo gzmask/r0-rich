@@ -14,7 +14,7 @@ $(function(){
         // [boolean] Start playing the slideshow on load.
       swap: true,
         // [boolean] show/hide stop and play buttons
-      pauseOnHover: true,
+      pauseOnHover: false,
         // [boolean] pause a playing slideshow on hover
       restartDelay: 2500
         // [number] restart delay on inactive slideshow
