@@ -27,6 +27,7 @@
                         (list
                         [:div.row-fluid 
                           [:div#slides.span8.offset2 
+                            [:img {:src "/img/store_gallery/003.jpg"}] 
                             [:img {:src "/img/store_gallery/001.jpg"}] 
                             [:img {:src "/img/store_gallery/002.jpg"}]]]
                         [:br]
