@@ -20,15 +20,18 @@
                    :time "24th, July, 2013"
              :body "Our brick-and-mortar store is now open at 2139 8th Ave, Regina, Saskatchewan! Please checkout our openning sale."}])
 
-(def dev_news [ {:title "Web office"
-                  :time "26th, July, 2013"
-             :body "Our Web Development office is open at 2139 8th Ave, Regina"}
-            {:title "Carment's tea is launched!"
-             :time "1st, May, 2013"
-             :body "please visit http://www.carmenstea.ca to check it out!"}
-            {:title "C&W renovations is launched!"
-             :time "2nd, April, 2013"
-             :body "please visit http://www.cwrenos.ca to check it out!"}])
+(def dev_news [{:title "Immediate response web apps" 
+                :time "30th, July, 2013" 
+                :body "An immediate reponse web site is that you click into a button of the website, it gives the result immediately without loading the internet for information results."}
+               {:title "Web office" 
+                :time "26th, July, 2013" 
+                :body "Our Web Development office is open at 2139 8th Ave, Regina"} 
+               {:title "Carment's tea is launched!"
+                :time "1st, May, 2013"
+                :body "please visit http://www.carmenstea.ca to check it out!"}
+               {:title "C&W renovations is launched!"
+                :time "2nd, April, 2013"
+                :body "please visit http://www.cwrenos.ca to check it out!"}])
 
 (def repair_news [ {:title "university discount"
              :time "26th, July, 2013"
