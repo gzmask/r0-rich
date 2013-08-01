@@ -3,7 +3,7 @@
 
 (defn def_nav [navs icons]
   (list (map (fn [nav icon]
-               (list [:div.span2 [:a.nav_bn {:href (str (s/lower-case (s/replace nav #"_|-|\s" "")))}[(keyword (str "i." icon)) nav]]]))
+               (list [:div.span2 [:a.nav_bn {:href (str "/" (s/lower-case (s/replace nav #"_|-|\s" "")) "#" (s/replace nav #"_|-|\s" ""))}[:i {:class icon :id (s/replace nav #"_|-|\s" "")} nav]]]))
              navs icons)))
 
 (def nav_bar (def_nav ["Home" "Store" "Web" "PC Repair" "Portfolio" "About"]

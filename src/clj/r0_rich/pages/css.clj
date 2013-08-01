@@ -126,6 +126,9 @@
             font-family: advent-Re;
             -webkit-transition: color 1s ease,font-size 200ms ease;
             transition: color 1s ease,font-size 200ms ease;}
+          :target {
+            font-size: 28px;
+            color:#FFF;}
           .nav_bn:hover {
             font-size: 28px;
             color:#FFF;}
