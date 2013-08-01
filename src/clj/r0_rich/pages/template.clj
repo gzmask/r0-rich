@@ -13,6 +13,7 @@
   "get page by pagename"
   (list
    [:head
+    [:meta {:http-equiv "X-UA-Compatible" :content "IE=edge"}]
     [:meta {:content "cc9d2c70d8838f49" :property "wb:webmaster"}]
     [:title "Richever Technology Ltd"]
     [:script {:src "http://code.jquery.com/jquery-latest.min.js" :type "text/javascript"}]

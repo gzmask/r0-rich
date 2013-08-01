@@ -178,16 +178,23 @@
             -webkit-transition: opacity 2s ease, visibility 0s linear 2s;
             transition: opacity 2s ease, visibility 0s linear 2s;
           }
+          @-ms-keyframes rotation {
+            from {-ms-transform: rotate(0deg);}
+            to {-ms-transform: rotate(359deg);}
+          }
           @-webkit-keyframes rotation {
             from {-webkit-transform: rotate(0deg);}
-            to {-webkit-transform: rotate(360deg);}
+            to {-webkit-transform: rotate(359deg);}
           }
           @keyframes rotation {
-            from {-webkit-transform: rotate(0deg);}
-            to {-webkit-transform: rotate(360deg);}
+            from {transform: rotate(0deg);}
+            to {transform: rotate(359deg);}
           }
           #rotation_logo {
-            -webkit-animation: rotation 2s infinite linear;}
+            -webkit-animation: rotation 2s infinite linear;
+            -ms-animation: rotation 2s infinite linear;
+            animation: rotation 2s infinite linear;
+          }
           a.icon:link {opacity: 1.0; background-color: #1A1E24; padding: 5px; color:#888;}
           a.icon:visited {opacity: 1.0; color:#888; }
           a.icon:hover {opacity: 1.0; color:#fff; text-decoration: none;}
