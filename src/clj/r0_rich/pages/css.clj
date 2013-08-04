@@ -141,7 +141,7 @@
             -webkit-border-radius: 70px;
             border-radius: 70px;}
           .icon1 {
-            opacity: 0.0;
+            opacity: 0.5;
             background: #90dd1f;
             background-image: url('/img/design_icon.png');
             background-repeat: no-repeat;
@@ -150,7 +150,7 @@
             -webkit-transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;
             transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;}
           .icon2 {
-            opacity: 0.0;
+            opacity: 0.5;
             background: #1a34a4;
             background-image: url('/img/store_icon.png');
             background-repeat: no-repeat;
@@ -159,7 +159,7 @@
             -webkit-transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;
             transition: opacity 1s ease, padding-top 1s ease, background-position 2s ease 1s;}
           .icon3 {
-            opacity: 0.0;
+            opacity: 0.5;
             background: #fce700;
             background-image: url('/img/service_icon.png');
             background-repeat: no-repeat;
