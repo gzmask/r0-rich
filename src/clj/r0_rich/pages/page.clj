@@ -74,10 +74,18 @@
                         [:div.newsbody.span6 "content"]
                         [:div.newstime.span2 "time"]]))))
 (def webdev_pg (pages (def_page "Web Design"
+                        (list
+                        [:div.row-fluid
+                         [:iframe.offset2 {:width "853"
+                                   :height "480"
+                                   :src "//www.youtube.com/embed/QopKN_VxxF8"
+                                   :frameborder "0"
+                                   :allowfullscreen "allowfullscreen"}]]
+                        [:br] [:br]
                         [:div#news_feed.row-fluid
                          [:div.newshead.span2.offset2 "atitle"]
                          [:div.newsbody.span6 "content"]
-                         [:div.newstime.span2 "time"]])))
+                         [:div.newstime.span2 "time"]]))))
 (def repair_pg (pages (def_page "PC Repair service"
                         [:div#news_feed.row-fluid
                          [:div.newshead.span2.offset2 "atitle"]
