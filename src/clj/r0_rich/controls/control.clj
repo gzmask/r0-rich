@@ -39,10 +39,7 @@
                    :time "24th, July, 2013" 
                    :body [:div "Our brick-and-mortar store is now open at 2139 8th Ave, Regina, Saskatchewan! Please checkout our openning sale."]}])
 
-(def dev_news [{:title "PHP Rant" 
-                :time "8th, August, 2013" 
-                :body [:div "PHP, as we know it for helplessly being the most popular Web language, are creating majority problems most developers facing. Is the problem laying in the language itself? Maybe, but not likely. But there is one fact that we can not ignore: " [:h3 "PHP attracts more than its fair share of the talentless."] " Now, stay away from it." ]}
-               {:title "Immediate response web apps" 
+(def dev_news [{:title "Immediate response web apps" 
                 :time "30th, July, 2013" 
                 :body [:div "An immediate response web site is that you click into a button of the website, it gives the result immediately without loading the internet for information results. Carmens' Tea is an immediate response website: " [:a {:href "http://www.carmenstea.ca" :target "_blank"} "Carmens' Tea"]]}
                {:title "Web office" 
