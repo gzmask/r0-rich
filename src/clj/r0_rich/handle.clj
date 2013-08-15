@@ -1,4 +1,5 @@
 (ns r0_rich.handle
+  (:gen-class)
   (:use compojure.core
         r0_rich.controls.control
         r0_rich.pages.css
