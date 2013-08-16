@@ -14,8 +14,7 @@
   :ring {:handler r0_rich.handle/app
          :auto-relod? true}
   :main r0_rich.handle
-  :profiles {:dev {:dependencies [[ring-server "0.2.8"]
-                                  [ring-mock "0.1.3"]]}}
+  :profiles {:uberjar {:aot [r0_rich.handle]}}
   :cljsbuild{:builds [{:source-paths ["src/cljs"],
                        :compiler {:output-to "resources/public/app.js",
                                   :optimizations :whitespace,
