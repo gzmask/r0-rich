@@ -1,5 +1,5 @@
-(ns r0_rich.pages.page
-  (:use r0_rich.pages.template)
+(ns richweb.pages.page
+  (:use richweb.pages.template)
   (:require [clojure.string :as s]))
 
 (defn def_page [title body]

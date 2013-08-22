@@ -1,4 +1,4 @@
-(ns r0_rich.pages.css)
+(ns richweb.pages.css)
 
 (defn css []
   {:headers {"Content-Type" "text/css"}

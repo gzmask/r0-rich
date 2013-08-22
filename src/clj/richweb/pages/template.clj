@@ -1,4 +1,4 @@
-(ns r0_rich.pages.template
+(ns richweb.pages.template
   (:require [clojure.string :as s]))
 
 (defn def_nav [navs icons]

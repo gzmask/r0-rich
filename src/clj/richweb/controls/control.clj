@@ -1,5 +1,5 @@
-(ns r0_rich.controls.control
-  (:use r0_rich.pages.page
+(ns richweb.controls.control
+  (:use richweb.pages.page
         net.cgrand.enlive-html))
 
 (def home_news [ 
