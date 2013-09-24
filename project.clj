@@ -8,7 +8,7 @@
   :dependencies [[ring/ring-core "1.1.8"]
                  [ring/ring-jetty-adapter "1.1.8"]
                  [enlive "1.1.1"]
-                 [org.clojars.gzmask/rich_pos "0.1.0-beta1"]
+                 [org.clojars.gzmask/rich_pos "0.2.0-SNAPSHOT"]
                  [compojure "1.1.5"]
                  [org.clojure/clojure "1.5.1"]]
   :source-paths ["src/clj"]

@@ -3,7 +3,7 @@ id INTEGER PRIMARY KEY AUTOINCREMENT,
 total INTEGER,
 timestamp INTEGER,
 refund Boolean
-, tax INTEGER);
+, tax float);
 CREATE TABLE Item (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 item_name varchar(255),
@@ -13,7 +13,7 @@ price float,
 cost float,
 quantity int,
 user_id int
-);
+, taxable Boolean, picture varchar(255));
 CREATE TABLE Item_sold (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 item_name varchar(255),
@@ -23,7 +23,7 @@ price float,
 cost float,
 user_id int,
 invoice_id int
-, refund Boolean);
+, refund Boolean, taxable Boolean);
 CREATE TABLE Item_type (
 id INTEGER PRIMARY KEY AUTOINCREMENT,
 type_name varchar(255)
