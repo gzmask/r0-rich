@@ -64,9 +64,7 @@
                          [:br]
                          [:div.row-fluid "Friday: 11am ~ 6pm"]
                          [:br]
-                         [:div.row-fluid "Saturday: 11am ~ 6pm"]
-                         [:br]
-                         [:div.row-fluid "A.K.A 11 am to 6 pm except Sunday"]] 
+                         [:div.row-fluid "A.K.A 11 am to 6 pm except Weekend"]] 
                         [:div.span3 "2139 8th Avenue Regina S4R 1G1" [:br][:br] "Tel 306-352-RICH(7424)"]]
                        [:br]
                        [:div#news_feed.row-fluid
