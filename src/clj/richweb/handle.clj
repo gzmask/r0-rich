@@ -4,7 +4,9 @@
         richweb.controls.control
         richweb.pages.css
         ring.adapter.jetty)
-  (:require [compojure.handler :as handler]
+  (:require [compojure.handler :as handler] 
+            [clojure.xml :as xml]
+            [clojure.zip :as zip]
             [r0_rich.pages.css :as pos]
             [r0_rich.item.crud :as item]
             [r0_rich.item_type.crud :as item_type]
@@ -17,13 +19,13 @@
   (GET "/style.css" [] (css))
   (GET "/pos_bg_style.css" [] (pos/css))
   (route/resources "/")
-  (GET "/" [] (home home_news))
-  (GET "/home" [] (home home_news))
-  (GET "/store" [] (store store_news))
-  (GET "/web" [] (webdev dev_news))
-  (GET "/pcrepair" [] (repair repair_news))
-  (GET "/portfolio" [] (port gallery_news))
-  (GET "/about" [] (about team_news))
+  (GET "/" [] (let [home_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/home/feed/")] (home home_news)))
+  (GET "/home" [] (let [home_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/home/feed/")] (home home_news)))
+  (GET "/store" [] (let [store_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/store/feed/")] (store store_news)))
+  (GET "/web" [] (let [dev_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/web/feed/")] (webdev dev_news)))
+  (GET "/pcrepair" [] (let [repair_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/pc/feed/")] (repair repair_news)))
+  (GET "/portfolio" [] (let [gallery_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/portfolio/feed/")] (port gallery_news)))
+  (GET "/about" [] (let [team_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/about/feed/")] (about team_news)))
   (GET "/items" {session :session} (item/index session))
   (GET "/items/new" {session :session} (item/new session))
   (POST "/items/create" {params :params session :session} (item/create params session))
@@ -60,7 +62,7 @@
   (POST "/check" {params :params session :session} (log/check (:username params) (:password params) session))
   (POST "/updateinvoice" {params :params session :session} (log/updateinvoice params session))
 
-  (route/not-found (no no_news)))
+  (route/not-found (let [no_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/store/feed/")] (no no_news))))
 
 (def app
   (handler/site app-routes))

@@ -19,8 +19,8 @@
                   [:div.span3.circle.icon3 [:a.circle.icon {:href "/pcrepair"} "PC Service"]]]
                  [:br] [:br]
                  [:div#news_feed.row-fluid
-                  [:div.newshead.span2.offset2 "atitle"]
-                  [:div.newsbody.span6 "content"]
+                  [:div.newshead.span2.offset1 "atitle"]
+                  [:div.newsbody.span7 "content"]
                   [:div.newstime.span2 "time"]]))))
 
 (def store_pg (pages (def_page "Regina Richever Store" 
@@ -32,13 +32,13 @@
                             [:img {:src "/img/store_gallery/002.jpg"}]]]
                         [:br]
                         [:div#news_feed.row-fluid
-                         [:div.newshead.span2.offset2 "atitle"]
-                         [:div.newsbody.span6 "content"]
+                         [:div.newshead.span2.offset1 "atitle"]
+                         [:div.newsbody.span7 "content"]
                          [:div.newstime.span2 "time"]]))))
 (def port_pg (pages (def_page "Portfolio"
                         [:div#news_feed.row-fluid
-                         [:div.newshead.span2.offset2 "atitle"]
-                         [:div.newsbody.span6 "content"]
+                         [:div.newshead.span2.offset1 "atitle"]
+                         [:div.newsbody.span7 "content"]
                          [:div.newstime.span2 "time"]])))
 (def about_pg (pages (def_page "About"
                        (list
@@ -68,8 +68,8 @@
                         [:div.span3 "2139 8th Avenue Regina S4R 1G1" [:br][:br] "Tel 306-352-RICH(7424)"]]
                        [:br]
                        [:div#news_feed.row-fluid
-                        [:div.newshead.span2.offset2 "atitle"]
-                        [:div.newsbody.span6 "content"]
+                        [:div.newshead.span2.offset1 "atitle"]
+                        [:div.newsbody.span7 "content"]
                         [:div.newstime.span2 "time"]]))))
 (def webdev_pg (pages (def_page "Web Design"
                         (list
@@ -86,12 +86,12 @@
                          [:div.newstime.span2 "time"]]))))
 (def repair_pg (pages (def_page "PC Repair service"
                         [:div#news_feed.row-fluid
-                         [:div.newshead.span2.offset2 "atitle"]
-                         [:div.newsbody.span6 "content"]
+                         [:div.newshead.span2.offset1 "atitle"]
+                         [:div.newsbody.span7 "content"]
                          [:div.newstime.span2 "time"]])))
 (def no_pg (pages (def_page "404"
                         [:div#news_feed.row-fluid
-                         [:div.newshead.span2.offset2 "atitle"]
-                         [:div.newsbody.span6 "content"]
+                         [:div.newshead.span2.offset1 "atitle"]
+                         [:div.newsbody.span7 "content"]
                          [:div.newstime.span2 "time"]])))
 
