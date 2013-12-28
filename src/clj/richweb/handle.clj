@@ -17,7 +17,7 @@
 
 (defroutes app-routes
   (GET "/style.css" [] (css))
-  (GET "/pos_bg_style.css" [] (pos/css))
+  (GET "/pos_bg_style.css" [] (pos/pos_css))
   (route/resources "/")
   (GET "/" [] (let [home_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/home/feed/")] (home home_news)))
   (GET "/home" [] (let [home_news (wordpress-xml-parse "http://richeverregina.wordpress.com/category/home/feed/")] (home home_news)))
