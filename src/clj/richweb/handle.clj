@@ -68,9 +68,4 @@
   (handler/site app-routes))
 
 (defn -main []
-    (run-jetty #'app {:port 80 :join? false}))
-
-(comment "repl"
-(defonce server (run-jetty #'app {:port 3000 :join? false}))
-(.start server)
-(.stop server))
+    (run-jetty #'app {:port 3001 :join? false}))
